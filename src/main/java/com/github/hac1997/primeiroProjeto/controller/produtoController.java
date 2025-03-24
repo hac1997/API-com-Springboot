@@ -6,17 +6,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.hac1997.primeiroProjeto.model.Produto;
+import com.github.hac1997.primeiroProjeto.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("produtos")
-public class produtoController {
+public class ProdutoController {
+
+    private ProdutoRepository produtoRepository;
+    
+
+    public ProdutoController(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
 
 
     @PostMapping    
-    public Produto salvar(@RequestBody Produto produto){
+    public void salvar(@RequestBody Produto produto){
         System.out.println("Produto recebido: " + produto.toString());
-        return produto;
+        produtoRepository.save(produto);
         
-    } 
+        } 
+
+    @GetMapping
+    public Produto obterPorId(@RequestBody String id){
+
+        return produtoRepository.findById(id).orElse(null);
+
+
+    }
 
 }

@@ -1,5 +1,4 @@
 package com.github.hac1997.primeiroProjeto.model;
-import org.springframework.data.relational.core.mapping.Column;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

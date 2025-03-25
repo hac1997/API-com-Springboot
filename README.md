@@ -58,7 +58,7 @@ A API contém endpoints para realizar operações CRUD sobre produtos. Os princi
 
 - Buscar produtos por filtros:
   ```http
-  GET /produtos?nome=ProdutoA&precoMin=50&precoMax=200
+  GET /produtos?nome=ProdutoA
   ```
 
 ## 🛠️ Configuração do Banco de Dados

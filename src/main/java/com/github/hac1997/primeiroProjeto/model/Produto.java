@@ -11,14 +11,14 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String nomeProduto;
+    private String nome;
     private String descricao;
     private double preco;
     
     @Override
     
         public String toString() {
-            return "Produto [id=" + id + ", nomeProduto=" + nomeProduto + ", descricao=" + descricao + ", preco=" + preco
+            return "Produto [id=" + id + ", nomeProduto=" + nome + ", descricao=" + descricao + ", preco=" + preco
                     + "]";
         }
     
@@ -28,11 +28,11 @@ public class Produto {
         public void setId(String id) {
             this.id = id;
         }
-        public String getNomeProduto() {
-            return nomeProduto;
+        public String getNome() {
+            return nome;
         }
-        public void setNomeProduto(String nomeProduto) {
-            this.nomeProduto = nomeProduto;
+        public void setNome(String nomeProduto) {
+            this.nome = nomeProduto;
         }
         public String getDescricao() {
             return descricao;
